@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, len, found = 0;
+
+    printf("Enter the string: ");
+    scanf("%s", str);
+
+    len = strlen(str);
+
+    // Check for substring "101"
+    for (i = 0; i < len - 2; i++) {
+        if (str[i] == '1' && str[i + 1] == '0' && str[i + 2] == '1') {
+            found = 1;
+            break;
+        }
+    }
+
+    if (found)
+        printf("String is ACCEPTED by the CFG\n");
+    else
+        printf("String is NOT accepted by the CFG\n");
+
+    return 0;
+}
